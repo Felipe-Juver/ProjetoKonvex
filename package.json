@@ -1,0 +1,13 @@
+{
+  "name": "projeto-konvex",
+  "version": "1.0.0",
+  "description": "API Gerenciadora de Projetos e Equipes",
+  "main": "src/app.ts",
+  "scripts": {
+    "dev": "tsx watch src/app.ts",
+    "db:push": "prisma db push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
