@@ -1,4 +1,4 @@
 import { PrismaClient } from '@prisma/client';
 
-// Criamos uma única instância do PrismaClient que será reutilizada em todo o projeto
+// Criamos e exportamos uma única instância do PrismaClient para ser reutilizada na aplicação inteira.
 export const prisma = new PrismaClient();

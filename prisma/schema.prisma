@@ -1,0 +1,27 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Projeto {
+  id          Int     @id @default(autoincrement())
+  nome        String
+  cliente     String
+  dataInicio  Int
+  dataEntrega Int
+  status      String  @default("nao iniciado")
+  idEquipe    Int?
+
+  equipe      Equipe? @relation(fields: [idEquipe], references: [id], onDelete: SetNull)
+}
+
+model Equipe {
+  id       Int       @id @default(autoincrement())
+  lider    String
+  membros  String    // Salvamos como string (ex: "Ana, Bruno")
+  projetos Projeto[]
+}

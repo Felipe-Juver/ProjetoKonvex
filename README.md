@@ -1,23 +1,44 @@
-# API Gerenciadora de Projetos e Equipes - KonvexJr
+# 🚀 API Gerenciadora de Projetos e Equipes — KonvexJr
 
-API RESTful desenvolvida como parte do processo seletivo da KonvexJr. O sistema gerencia projetos e equipes desenvolvedoras com suporte a persistência em banco de dados e validações das regras de negócio.
+API RESTful desenvolvida para o processo seletivo da **KonvexJr**, responsável por gerenciar projetos e equipes associadas com suporte a operações de CRUD completas, validações de schema e persistência em banco de dados.
+
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **Linguagem:** TypeScript
-- **Runtime/Framework:** Node.js + Express
-- **Banco de Dados:** PostgreSQL
-- **ORM:** Prisma
-- **Validação:** Zod
+- **Node.js** com **TypeScript**
+- **Express** (Framework Web)
+- **Prisma ORM** (Mapeamento Objeto-Relacional)
+- **SQLite** (Banco de Dados Relacional)
+- **Zod** (Validação de schemas e dados de entrada)
+- **tsx** (Executor TypeScript em ambiente de desenvolvimento)
 
-## 🚀 Como Executar o Projeto
+---
 
-### Pré-requisitos
-- Node.js (v18+)
-- PostgreSQL rodando localmente ou via Docker
+## 📁 Estrutura do Projeto
 
-### Passos
-1. Clone o repositório:
-   ```bash
-   git clone [https://github.com/seu-usuario/seu-repositorio.git](https://github.com/seu-usuario/seu-repositorio.git)
-   cd seu-repositorio
+```text
+ProjetoKonvex/
+├── prisma/
+│   ├── schema.prisma   # Definição do banco de dados e modelos
+│   └── dev.db          # Arquivo do banco de dados SQLite
+├── src/
+│   ├── controllers/    # Camada de controle de requisições HTTP
+│   │   ├── equipeController.ts
+│   │   └── projetoController.ts
+│   ├── lib/            # Instância do Prisma Client
+│   │   └── prisma.ts
+│   ├── routes/         # Definição dos endpoints REST
+│   │   ├── equipeRoutes.ts
+│   │   └── projetoRoutes.ts
+│   ├── schemas/        # Schemas de validação com Zod
+│   │   ├── equipeSchema.ts
+│   │   └── projetoSchema.ts
+│   ├── services/       # Regras de negócio e comunicação com o banco
+│   │   ├── equipeService.ts
+│   │   └── projetoService.ts
+│   └── app.ts          # Arquivo principal da aplicação
+├── .env                # Variáveis de ambiente
+├── package.json        # Dependências e scripts do projeto
+├── tsconfig.json       # Configurações do TypeScript
+└── README.md           # Documentação do projeto
